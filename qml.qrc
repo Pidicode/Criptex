@@ -1,0 +1,64 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CriptografiaMenu.qml</file>
+        <file>CriptografiaClassica.qml</file>
+        <file>ListItem.qml</file>
+        <file>MenuClassica.qml</file>
+        <file>CriptografiaModerna.qml</file>
+    </qresource>
+    <qresource prefix="/SistemesDeXifrat">
+        <file>MInversio.qml</file>
+        <file>AlfabetDesordenat.qml</file>
+        <file>CodiCalendari.qml</file>
+        <file>MSustitucioNumerica.qml</file>
+        <file>Transposicio2Claus.qml</file>
+        <file>MVerticalParal·lel.qml</file>
+    </qresource>
+    <qresource prefix="/EdatAntiga">
+        <file>XifratAtbash.qml</file>
+        <file>XifratCesar.qml</file>
+        <file>TaulerPolibio.qml</file>
+        <file>Escitala.qml</file>
+    </qresource>
+    <qresource prefix="/Items">
+        <file>ColumnCifrados.qml</file>
+        <file>PageClassica.qml</file>
+        <file>PageInformacion.qml</file>
+        <file>ColumnLayoutInformacion.qml</file>
+        <file>FlickableInformacion.qml</file>
+        <file>VideoInformacion.qml</file>
+        <file>RectanguloFrecuencias.qml</file>
+        <file>ComboBoxEditado.qml</file>
+        <file>AreaCifrados.qml</file>
+        <file>TextoInformacion.qml</file>
+        <file>VideoVentana.qml</file>
+        <file>DialogoError.qml</file>
+    </qresource>
+    <qresource prefix="/EdatMedieval">
+        <file>AnalisiFrecuencias.qml</file>
+    </qresource>
+    <qresource prefix="/Renaixement">
+        <file>TaulaTritemio.qml</file>
+        <file>XifratVigenere.qml</file>
+        <file>CodiBacon.qml</file>
+    </qresource>
+    <qresource prefix="/XIX">
+        <file>XifratDelastelle.qml</file>
+        <file>XifratPlayfair.qml</file>
+        <file>CodiMorse.qml</file>
+        <file>XifratNihilista.qml</file>
+        <file>XifratRailFence.qml</file>
+    </qresource>
+    <qresource prefix="/XX">
+        <file>XifratADFGVX.qml</file>
+        <file>XifratHill.qml</file>
+        <file>Enigma.qml</file>
+    </qresource>
+    <qresource prefix="/Moderna">
+        <file>CodiBinari.qml</file>
+        <file>XifratRSA.qml</file>
+        <file>RC4.qml</file>
+        <file>DES.qml</file>
+    </qresource>
+</RCC>
