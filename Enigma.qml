@@ -149,9 +149,6 @@ PageClassica {
                             TextoInformacion{
                                 text: "La maquina Enigma és una combinació de subsistemes elèctrics i mecànics, sent un dispositiu electromecànic. El sistema estava compost d’un teclat, 3 rotors que rotaven cada vegada que es prenia una tecla, d’un reflector (posteriorment s’explicarà que és i com funcionava), d’un plugboard i de diverses llums que indicarien el xifrat."
                             }
-                            TextoInformacion{
-                                text: "La maquina Enigma és una combinació de subsistemes elèctrics i mecànics, sent un dispositiu electromecànic. El sistema estava compost d’un teclat, 3 rotors que rotaven cada vegada que es prenia una tecla, d’un reflector (posteriorment s’explicarà que és i com funcionava), d’un plugboard i de diverses llums que indicarien el xifrat."
-                            }
                         }
                         Image{
                             Layout.preferredHeight: 250
@@ -314,6 +311,11 @@ PageClassica {
 
                     TextoInformacion{
                         text: "Com la Y no estava connectada al plugboard, podem determinar que el xifrat d’aquesta E es finalment una Y. Si realitzem aquest procés amb totes les lletres obtenim <<YLGAHW>>. Pel que fa el programa, cal introduir una clau de 3 lletres, per exemple (AAA), que ens donaria les posicions inicials dels rotors. El plugboard es opcional, per utilitzar-lo, s'escriuen les dos lletres que vols connectar juntes, amb un espai si vols connectar més, per exemple (AB CD). Per últim es selecciona els rotors a utilitzar i el seu ordre. Per exemple, rotor I, rotor I, rotor III."
+                    }
+
+                    TextoInformacion{
+                        text: "Deixem un vídeo que visualitza molt bé el procés de l'Enigma així com les seves propietats en combinatoria: <a href='https://www.youtube.com/watch?v=G2_Q9FoD-oQ&t'>https://www.youtube.com/watch?v=G2_Q9FoD-oQ&t</a>. No ho introduïm al programa per el seu elevat pes."
+                        onLinkActivated: Qt.openUrlExternally("https://www.youtube.com/watch?v=G2_Q9FoD-oQ&t")
                     }
                 }
             }

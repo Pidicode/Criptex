@@ -10,8 +10,6 @@ Page {
     height: window.heigth
     title: qsTr("Home")
 
-
-
     AnimatedImage{
         anchors.fill: parent
         source: "qrc:/assets/fondoCriptografia.gif"

@@ -19,7 +19,7 @@ public:
     //Hill
 
     int calcularDeterminante (int, int[25][25]);
-    int mcd (int,int);
+    Q_INVOKABLE int mcd (int,int);
     Q_INVOKABLE QString generarMatriz(int);
     Q_INVOKABLE bool comprobarMatriz(QString, int);
     Q_INVOKABLE QString cifradoHill(QString, QString, int);

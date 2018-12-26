@@ -13,7 +13,8 @@ Page{
     scale: visible ? 1.0 : 0.1
      Behavior on scale {
        NumberAnimation  { duration: 100  }
-     }
+    }
+
 
 
 }

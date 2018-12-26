@@ -6,6 +6,7 @@
         <file>ListItem.qml</file>
         <file>MenuClassica.qml</file>
         <file>CriptografiaModerna.qml</file>
+        <file>MenuModerna.qml</file>
     </qresource>
     <qresource prefix="/SistemesDeXifrat">
         <file>MInversio.qml</file>

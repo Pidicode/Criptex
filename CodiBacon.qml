@@ -14,7 +14,7 @@ PageClassica {
 
     ColumnCifrados{
         tTitulo.text: "Codi Bacon"
-        tDescripccion.text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. "
+        tDescripccion.text: "El codi Bacon es un sistema disenyat per Francis Bacon, on cada lletra del alfabet es reemplaçada per un grup de 5 As o Bs, d'acord amb l'alfabet del codi Bacon. Presenta una curiosa similitud amb el codi binari. "
         tCifrado.text: tNoCifrado.text === "" ? "" : (comprobacionCifrado) ? xifrats.cifradoBacon(tNoCifrado.text) : xifrats.descifradoBacon(tNoCifrado.text, tCifrado.text)
 
 

@@ -73,7 +73,6 @@ Page {
                         }
                     }
 
-
                     ListItem{
                         text: "RSA"
                         backgroundRoot.color: "#283C50"
@@ -90,12 +89,6 @@ Page {
                         onListItemClick: {
                             seleccionarCifrado("Moderna/RC4.qml")
                         }
-                    }
-
-                    ListItem{
-                        text: "AES"
-                        backgroundRoot.color: "#283C50"
-                        backgroundRoot.border.color: "#395671"
                     }
 
                     ListItem{
@@ -127,6 +120,7 @@ Page {
             Layout.fillWidth: true
             Layout.preferredHeight: Screen.height/3
             Layout.preferredWidth: Screen.width/3
+            initialItem: "MenuModerna.qml"
 
             replaceEnter: Transition {
                 PropertyAnimation {

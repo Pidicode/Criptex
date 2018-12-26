@@ -55,8 +55,33 @@
         <file>assets/tablaEnigma8.png</file>
         <file>assets/maquinaEnigma.jpg</file>
         <file>assets/maquinaEnigma2.jpg</file>
-        <file>assets/videoEjemplo.mp4</file>
         <file>assets/pause.png</file>
         <file>assets/play.png</file>
+        <file>assets/computadorIBM.jpg</file>
+        <file>assets/tablaDes1.png</file>
+        <file>assets/tablaDes2.png</file>
+        <file>assets/tablaDes3.png</file>
+        <file>assets/tablaDes4.png</file>
+        <file>assets/tablaDes5.png</file>
+        <file>assets/tablaDes6.png</file>
+        <file>assets/tablaDes7.png</file>
+        <file>assets/tablaDes8.png</file>
+        <file>assets/tablaDes9.png</file>
+        <file>assets/tablaDes10.png</file>
+        <file>assets/tablaRC4_1.png</file>
+        <file>assets/tablaRC4_2.png</file>
+        <file>assets/tablaRC4_3.png</file>
+        <file>assets/tablaRC4_4.png</file>
+        <file>assets/tablaRC4_5.png</file>
+        <file>assets/tablaRC4_6.png</file>
+        <file>assets/tablaRC4_7.png</file>
+        <file>assets/tablaRC4_8.png</file>
+        <file>assets/ronaldRivest.jpg</file>
+        <file>assets/imatgeTritemi.jpg</file>
+        <file>assets/alkindiFrecuencias.jpg</file>
+        <file>assets/nihilistasRusos.jpg</file>
+        <file>assets/simboloAudio.png</file>
+        <file>assets/simboloExpandir.png</file>
+        <file>assets/simboloMinimizar.png</file>
     </qresource>
 </RCC>

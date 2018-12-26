@@ -50,7 +50,6 @@ PageClassica {
             id: error
         }
 
-
         RowLayout {
             id: rowLayout
             Layout.fillHeight: true
@@ -129,6 +128,18 @@ Una vegada tenim la frase xifrada per la taula (si ens fixem hem fet un xifrat p
 
                     TextoInformacion{
                         text: "A continuació, llegiríem la taula verticalment per columnes i obtindríem la frase xifrada: <<VVFFFAFADAAAGAAAAGDF>>. Pel que fa el programa, cal introduir un alfabet de 36 caràcters (l'alfabet normal + els números del 0 al 9) i la paraula clau."
+                    }
+
+                    VideoInformacion{
+                        source: "qrc:/videos/videoADFGVX.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
                     }
                 }
             }

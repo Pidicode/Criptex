@@ -80,7 +80,6 @@ QString XifratsAntiga::descifradoPolibio(QString frase, QString fraseCifrada){
     frase = frase.replace(" ","");
     QString alfabeto = "abcdefghiklmnopqrstuvwxyz";
     QString fraseFinal;
-    int test = frase.length(), test2 = 0;
 
     for(int i = 0; i<frase.length(); i+=2){
         fraseFinal.append(alfabeto.at((frase[i].digitValue()-1)*5+(frase[i+1].digitValue()-1)));

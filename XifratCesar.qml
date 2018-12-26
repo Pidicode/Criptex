@@ -87,8 +87,20 @@ PageClassica {
                         horizontalAlignment: Text.AlignJustify
                         text: "Per exemple, a la següent imatge, podem veure un alfabet avançat 3 posicions"
                     }
+                    VideoInformacion{
+                        source: "qrc:/videos/videoCesar.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
+                    }
                 }
             }
+
         }
 
         tCifrado.text: (comprobacionCifrado) ? xifrats.cifradoCesar(tNoCifrado.text, spinBox.value) : xifrats.descifradoCesar(tNoCifrado.text, spinBox.value)

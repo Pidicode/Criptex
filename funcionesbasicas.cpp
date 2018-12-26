@@ -44,3 +44,11 @@ QString FuncionesBasicas::quitarEspacioUltimaLetra(QString frase){
     frase.replace(frase.remove(0,frase.length()-1),"");
     return frase;
 }
+
+bool FuncionesBasicas::comprobarPrimo(QString nString){
+    int n = nString.toInt();
+    for(int i = 2; i<n; i++){
+        if(n%i==0) return false;
+    }
+    return true;
+}

@@ -15,6 +15,10 @@ PageClassica {
         id: columnaCifrados
         tTitulo.text: "Codi Morse"
         tDescripccion.text: "Alfred Vail junt amb Samuel Morse, investigant el telègraf elèctric creen el codi Morse, codi que patentaria posteriorment Samuel Morse, junt amb el telègraf elèctric. Funcionava mitjançant impulsos elèctrics del telègraf i segons la durada d'aquests, es representaba amb rayes (—) o punts (.).  Per conèixer més sobre la història i el seu alfabet fes click <a href='http://www.kde.org'>aquí</a>"
+        imagenCifrado.visible: true
+        imagenCifrado.source: "qrc:/assets/Morse.jpg"
+        widthImagen: 325
+        heightImagen: 150
         tCifrado.text: (tNoCifrado.text === "") ? "" : (comprobacionCifrado) ? xifrats.cifradoMorse(tNoCifrado.text) : xifrats.descifradoMorse(tNoCifrado.text)
         tDescripccion.onLinkActivated: {
             pInformacion.state = (pInformacion.state === "visible") ? "invisible" : "visible"

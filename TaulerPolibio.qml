@@ -58,7 +58,7 @@ PageClassica {
                         }
                     }
                     VideoInformacion{
-                        source: "qrc:/videos/Tauler Polibi.mp4"
+                        source: "qrc:/videos/videoPolibi.mp4"
                         onVideoBoolChanged: {
                             if(!videoBool){
                                 pInformacion.Layout.minimumHeight = window.height/2

@@ -274,6 +274,11 @@ PageClassica {
                         text: "Aquest procés el repetim amb els blocs restants de lletres i obtenim <<GFJQFKBKCWCMGTSSULZOA>>"
                     }
 
+                    TextoInformacion{
+                        text: "Deixem un link a un vídeo força explicatiu del xifrat Hill. No deixem la seva reproducció en el programa per la seva gran duració: <a href='https://www.youtube.com/watch?v=ZAXkmBq9Zl0'>https://www.youtube.com/watch?v=ZAXkmBq9Zl0</a>"
+                        onLinkActivated: Qt.openUrlExternally("https://www.youtube.com/watch?v=ZAXkmBq9Zl0")
+                    }
+
                 }
             }
         }

@@ -41,7 +41,6 @@ PageClassica {
             }
         }
 
-
         Rectangle{
             anchors.fill: rowFrecuencias
             color: "gray"

@@ -14,7 +14,11 @@ PageClassica {
 
     ColumnCifrados{
         id: columnaCifrados
-        tTitulo.text: "La taula de Tritemio"
+        tTitulo.text: "La taula de Tritemi"
+        imagenCifrado.visible: true
+        imagenCifrado.source: "qrc:/assets/imatgeTritemi.jpg"
+        widthImagen: 300
+        heightImagen: 150
         tDescripccion.text: "Johan von Heidenberg, també conegut com Johannes Thrithemius, va ser un monge alemany fundador de Sodalitas Celticas, societat dedicada al estudi de diverses matèries, com les llengües o les matemàtiques. Va ser el creador de la primera taula de substitució polialfabètica, o tabula recta com ell anomenava. Aquesta es la taula de Tritemio. Per conèixer el funcionament del xifrat fes click <a href='http://www.kde.org'>aquí</a> "
         tCifrado.text: tNoCifrado.text === "" ? "" : (comprobacionCifrado) ? xifrats.cifradoTritemio(tNoCifrado.text) : xifrats.descifradoTritemio(tNoCifrado.text)
 
@@ -56,6 +60,18 @@ PageClassica {
                         Layout.fillWidth: true
                         fillMode: Image.PreserveAspectFit
                         source: "qrc:/assets/tablaTritemio2.png"
+                    }
+
+                    VideoInformacion{
+                        source: "qrc:/videos/videoTritemi.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
                     }
 
 

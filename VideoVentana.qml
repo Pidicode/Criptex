@@ -15,6 +15,7 @@ Window {
 
     Video{
         id: video
+
         anchors.fill: parent
         Layout.preferredHeight: 500
         volume: 0.2
@@ -154,15 +155,63 @@ Window {
                 }
             }
 
-            Slider{
-                id: slider
-                width: roota.width
+            RowLayout{
+                spacing: 0
                 anchors.bottom: parent.bottom
-                from: 0
-                to: video.duration
-                value: video.position
-                onMoved: {
-                    video.seek(slider.value)
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter
+                Layout.preferredWidth: video.width-10
+                Slider{
+                    id: sliderTiempo
+                    anchors.bottom: parent.bottom
+                    Layout.fillWidth: true
+                    Layout.preferredWidth: video.width-layoutSliderVolumen.width-10
+                    from: 0
+                    to: video.duration
+                    value: video.position
+                    onMoved: {
+                        video.seek(sliderTiempo.value)
+                    }
+                }
+
+                RowLayout{
+                    spacing: 0
+                    id: layoutSliderVolumen
+                    Layout.preferredWidth: roota.width/6.75
+                    Image{
+                        source:"qrc:/assets/simboloAudio.png"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        fillMode: Image.PreserveAspectFit
+                        Layout.maximumHeight: 25
+                        Layout.maximumWidth: 20
+                    }
+
+                    Slider{
+                        id: sliderVolumen
+                        anchors.bottom: parent.bottom
+                        Layout.fillWidth: true
+                        from: 0
+                        to: 1
+                        value: video.volume
+                        onMoved: {
+                            video.volume = sliderVolumen.value
+                        }
+                    }
+                    Image{
+                        source:"qrc:/assets/simboloMinimizar.png"
+                        Layout.fillWidth: true
+                        fillMode: Image.PreserveAspectFit
+                        Layout.maximumHeight: 25
+                        Layout.maximumWidth: 20
+
+                        MouseArea{
+                            anchors.fill: parent
+                            onClicked: {
+                                roota.close()
+                            }
+                        }
+                    }
                 }
             }
         }

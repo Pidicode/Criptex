@@ -6,7 +6,7 @@ import QtAV 1.6
 import "qrc:/Items"
 
 PageClassica {
-    id: pageAtbash
+    id: pageEscitala
 
 
     XifratsAntiga{
@@ -77,20 +77,10 @@ PageClassica {
                         text: "Aquesta matriu llegida horitzontalment és el que veuríem si estigués col·locada en la escítala. Llegida verticalment si no tinguéssim la cinta col·locada. En aquest cas, hem simulat una escítala força prima, amb una gran quantitat de columnes. Si l’escítala tingués un major grossor, tindríem menys columnes. Per tant, el nombre de columnes és la variable que simula el grossor d’aquesta. Amb els valors escollits, la frase quedaria xifrada com <<EBRXA CELAML PDLEE RTERC EE>>."
                         Layout.minimumHeight: lineCount * 30
                     }
-
-                    VideoInformacion{
-                        onVideoBoolChanged: {
-                            if(!videoBool){
-                                pInformacion.Layout.minimumHeight = window.height/2
-                            }
-                            else{
-                                pInformacion.Layout.minimumHeight = window.height/3.5
-                            }
-                        }
-                    }
                 }
             }
         }
+
 
         Component.onCompleted: {
             pInformacion.Layout.row = 2

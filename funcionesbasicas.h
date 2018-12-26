@@ -15,6 +15,7 @@ public:
     Q_INVOKABLE int contarLetras(QString);
     Q_INVOKABLE int stringANum(QString);
     Q_INVOKABLE QString quitarEspacioUltimaLetra(QString);
+    Q_INVOKABLE bool comprobarPrimo(QString);
 
     //Hill
 

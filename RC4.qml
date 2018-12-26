@@ -53,51 +53,142 @@ PageClassica {
                 ColumnLayoutInformacion{
                     id: columnaLayout
                     TextoInformacion{
-                        text: "Primer de tot, hem de crear una taula 6x6, introduint un alfabet aleatori dins d’aquesta. Al ser 6x6 tenim 36 elements, per tant, a més de les lletres de l’alfabet, hem d’afegir els números del 0 al 9. Com a exemple de taula:"
-                    }
-                    Image{
-                        Layout.preferredHeight: 400
-                        Layout.alignment: Qt.AlignTop
-                        Layout.preferredWidth: pInformacion.width
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        fillMode: Image.PreserveAspectFit
-                        source: "qrc:/assets/tablaADFGVX1.png"
-                    }
+                        text: "El sistema RC4 és un dels sistemes més utilitzats e importants dels xifrats en flux, sinó el més utilitzat. Va ser dissenyat pel criptògraf Ron Rivest l’any 1897, sent inicialment un secret comercial però filtrat l’any 1994 a través d’una llista de correu. És utilitzat en protocols de xifrat populars com ara el TLS (Transport Layer Security) o el WEP (Wired Equivalent Privacy), protocol totalment insegur avui en dia.
 
-                    TextoInformacion{
-                        text: "A continuació, diguem-ne que volem xifrar <<ATAC URGENT>>. Substituiríem cada lletra del text pla per les corresponents a la fila-columna. Per exemple, la A la substituiríem per AV ja que la seva fila correspon a la fila ‘A’ i la seva columna a la columna ‘V’. Xifrant tota la paraula tindríem <<AV AA AV AF GF GA DF AD FF AA>>.
-Una vegada tenim la frase xifrada per la taula (si ens fixem hem fet un xifrat per substitució), agafem una paraula clau per realitzar la segona part del xifrat, diguem-ne la paraula <<SALA>>. El procés consistirà en crear una nova taula, de tantes columnes com lletres tingui la paraula clau, e introduir horitzontalment la frase xifrada:
+RC4 és remarcable per la seva simplicitat i velocitat, però també cal dir que és molt vulnerable i, per tant, insegur, sobretot si fem ús de claus no aleatòries, com vam mencionar en el punt anterior, no sent recomanat el seu ús en nous sistemes.
+
+El xifrat consisteix bàsicament en 2 algorismes, el KSA (Key Scheduling Algorithm) i el PRGA (Pseudo-Random Generation Algorithm). Es fa ús d’un vector S de 256 números que conté els nombres del 0 al 256. El KSA, a partir d’un vector clau o vector K, desordena els nombres del vector S. Aquest vector desordenat serà el que utilitzarà l’algorisme PRGA per xifrar finalment el missatge. Primer, hem de crear dos vectors de 256 nombres, el vector S i el vector K. Pel que fa al vector S, s’omplirà amb els nombres del 0 al 256, en ordre:
 "
                     }
-
                     Image{
+                        Layout.preferredHeight: 100
                         Layout.alignment: Qt.AlignTop
-                        Layout.preferredHeight: 350
                         Layout.preferredWidth: pInformacion.width
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         fillMode: Image.PreserveAspectFit
-                        source: "qrc:/assets/tablaADFGVX2.png"
+                        source: "qrc:/assets/tablaRC4_1.png"
                     }
 
                     TextoInformacion{
-                        text: "Ara, amb la nova taula creada, reordenem les columnes per ordre alfabètic:"
+                        text: "Pel que fa al vector K, també anomenat la “llavor” del sistema, consistirà en un vector de 256 nombres omplert amb la paraula clau. Per exemple, si la nostra paraula clau és <<SALA>>, omplirem el vector repetint la clau tantes vegades com calgui. Realment, introduïm una paraula clau que després passem a ASCII, per operar amb nombres, tenint <<SALA>> en ASCII com <<83 65 76 65>>. Per tant, el vector K resultaria en:"
                     }
 
                     Image{
                         Layout.alignment: Qt.AlignTop
-                        Layout.preferredHeight: 350
+                        Layout.preferredHeight: 650
                         Layout.preferredWidth: pInformacion.width
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         fillMode: Image.PreserveAspectFit
-                        source: "qrc:/assets/tablaADFGVX3.png"
+                        source: "qrc:/assets/tablaRC4_2.png"
                     }
 
                     TextoInformacion{
-                        text: "A continuació, llegiríem la taula verticalment per columnes i obtindríem la frase xifrada: <<VVFFFAFADAAAGAAAAGDF>>. Pel que fa el programa, cal introduir un alfabet de 36 caràcters (l'alfabet normal + els números del 0 al 9) i la paraula clau."
+                        text: "Amb el vector S i el vector K ja creat, barregem el vector S a partir del següent algorisme o codi:"
                     }
+
+                    Image{
+                        Layout.alignment: Qt.AlignTop
+                        Layout.preferredHeight: 250
+                        Layout.preferredWidth: pInformacion.width
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/assets/tablaRC4_3.png"
+                    }
+
+                    TextoInformacion{
+                        text: "On, a partir d’un bucle, anem recorrent i barrejant el vector S, calculant un valor de j que després s’utilitzarà per intercanviar les posicions dels nombres del mateix vector. Per als tres primers valors de i l’algorisme funcionaria com:"
+                    }
+
+                    Image{
+                        Layout.alignment: Qt.AlignTop
+                        Layout.preferredHeight: 200
+                        Layout.preferredWidth: pInformacion.width
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/assets/tablaRC4_4.png"
+                    }
+
+                    TextoInformacion{
+                        text: "El vector S resultaria en:"
+                    }
+
+                    Image{
+                        Layout.alignment: Qt.AlignTop
+                        Layout.preferredHeight: 600
+                        Layout.preferredWidth: pInformacion.width
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/assets/tablaRC4_5.png"
+                    }
+
+                    TextoInformacion{
+                        text: "Una vegada hem aplicat l’algorisme KSA i tenim un nou vector S, apliquem l’algorisme PRGA, el qual generarà la seqüència de clau o keystream. Aquesta seqüència s’utilitzarà per xifrar el missatge a partir de l’operador XOR. Aquesta seqüència de clau tindrà la mateixa longitud que la frase a xifrar. L’algorisme PRGA és el següent:"
+                    }
+
+                    Image{
+                        Layout.alignment: Qt.AlignTop
+                        Layout.preferredHeight: 250
+                        Layout.preferredWidth: pInformacion.width
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/assets/tablaRC4_6.png"
+                    }
+
+                    TextoInformacion{
+                        text: "Aquest procés es repetirà tantes vegades com lletres tingui la frase a xifrar, per tant ho podem expressar així:"
+                    }
+
+                    Image{
+                        Layout.alignment: Qt.AlignTop
+                        Layout.preferredHeight: 250
+                        Layout.preferredWidth: pInformacion.width
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/assets/tablaRC4_7.png"
+                    }
+
+                    TextoInformacion{
+                        text: "Sent k el comptador del bucle i L la longitud de la frase a xifrar. Bàsicament, comença calculant un valor per i, i altre per j, que utilitza per intercanviar els valors al vector de S[i] i S[j], i per calcular el valor de t, el qual serà l’índex al vector S d’un dels valors que tindrà el keystream. Diguem-ne que volem xifrar <<HOLA>>, utilitzant el vector S ja prèviament barrejat amb la clau <<SALA>>. L’algorisme transcorreria així:"
+                    }
+
+                    Image{
+                        Layout.alignment: Qt.AlignTop
+                        Layout.preferredHeight: 200
+                        Layout.preferredWidth: pInformacion.width
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/assets/tablaRC4_8.png"
+                    }
+
+                    TextoInformacion{
+                        text: "Resultant el keystream en: <<226 163 138 140>>. Ara, passaríem la frase i el keystream a binari, resultant el keystream <<11100010 10100011 10001010 10001100>>, i la frase <<01001000 01001111 01001100 01000001>>. A continuació aplicarem l’operació XOR entre les dues expressions. Resultant el xifrat: <<10101010 11101100 11000110 11001101>>. En comptes de deixar-ho en binari també ho podem expressar en qualsevol altre sistema, per exemple en hexadecimal resultant en: <<AA EC C6 CD>>. A continuació, tenim un vídeo explicatiu del xifrat. El vídeo no és propi, link original al creador: "
+                    }
+
+                    TextoInformacion{
+                        text: "A continuació, tenim un vídeo explicatiu del xifrat. El vídeo no és propi, link original al creador: <a href='https://www.youtube.com/watch?v=G3HajuqYH2U&t'>https://www.youtube.com/watch?v=G3HajuqYH2U&t=</a>"
+                        onLinkActivated: Qt.openUrlExternally("https://www.youtube.com/watch?v=G3HajuqYH2U&t=")
+                    }
+
+                    VideoInformacion{
+                        source: "qrc:/videos/videoRC4.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
+                    }
+
                 }
             }
         }

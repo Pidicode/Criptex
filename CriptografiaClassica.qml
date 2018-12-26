@@ -10,7 +10,7 @@ import "qrc:/Items"
 Page {
 
     property string xifrats: ""
-
+    signal exit
     id: pageClassica
     anchors.fill: parent
 
@@ -79,7 +79,10 @@ Page {
         }
         ListItem {
             text: "Xifrat Cesar"
-            onListItemClick: seleccionarCifrado("EdatAntiga/XifratCesar.qml"), console.log(stackViewClassica.depth)
+            onListItemClick:{
+                exit;
+                seleccionarCifrado("EdatAntiga/XifratCesar.qml")
+            }
         }
         ListItem {
             text: "Xifrat Atbash"
@@ -149,10 +152,6 @@ Page {
         ListItem {
             text: "La enigma"
             onListItemClick: seleccionarCifrado("XX/Enigma.qml")
-        }
-        ListItem {
-            text: "La xifra del Che Guevara"
-            onListItemClick: seleccionarCifrado("EdatAntiga/TaulerPolibio.qml")
         }
     }
 
@@ -275,6 +274,7 @@ Page {
             Layout.preferredWidth: Screen.width/3
             initialItem: "MenuClassica.qml"
 
+
             replaceEnter: Transition {
                 PropertyAnimation {
                     property: "y"
@@ -292,6 +292,9 @@ Page {
                     duration: 250
                 }
             }
+
         }
     }
+
+
 }

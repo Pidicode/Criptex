@@ -69,6 +69,18 @@ En canvi, si volem xifrar la frase amb tan sols 2 rails imaginaris:"
                     TextoInformacion{
                         text: "Obtindríem <<PEAATOERPRRRPS>>."
                     }
+
+                    VideoInformacion{
+                        source: "qrc:/videos/videoRailFence.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
+                    }
                 }
             }
         }

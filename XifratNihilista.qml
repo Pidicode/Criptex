@@ -13,6 +13,10 @@ PageClassica {
 
     ColumnCifrados{
         id: columnaCifrados
+        imagenCifrado.visible: true
+        imagenCifrado.source: "qrc:/assets/nihilistasRusos.jpg"
+        widthImagen: 325
+        heightImagen: 150
         tCifrado.text: (tNoCifrado.text === "" || tPalabraClave1.text === "" || tPalabraClave2 === "") ? "" : (comprobacionCifrado) ? xifrats.cifradoNihilista(tNoCifrado.text, tPalabraClave1.text, tPalabraClave2.text) : xifrats.descifradoNihilista(tNoCifrado.text, tPalabraClave1.text, tPalabraClave2.text)
         tTitulo.text: "Xifrat Nihilista"
         tDescripccion.text: "El nihilisme és un corrent filosòfic que nega tota creença, norma o principi. Aquest corrent es va estendre molt a la societat russa de la segona meitat del segle XX. Va derivar en un mitjà per la lluita dels treballadors, amb revelacions que suposarien la presó per part dels zaristes. A aquestes presons va néixer el següent xifrat, en la dècada de 1880, utilitzat pels nihilistes per comunicar-se. El mecanisme es força extens, si vol conèixer el procediment, fes click <a href='http://www.kde.org'>aquí</a> "
@@ -106,7 +110,18 @@ Ara, fem una nova taula, on introduirem la frase a xifrar, per exemple <<NECESSI
 
                     TextoInformacion{
                         text: "A la primera fila tenim el text pla, a la segona el text xifrat, a la tercera el xifrat de la paraula clau, i a la quarta la suma dels dos. A la fila de la paraula clau, repetim el xifrat fins que ocupi totes les columnes. A més, si la suma dels dos nombres donés més de 100, tindríem que restar 100 i deixar el número que donés. Per exemple, si tinguéssim 110 deixariem 10, o si tinguéssim 105, deixaríem 05. El resultat de les sumes seria el xifrat, per tant, si enviem el missatge en paquets de 5 en 5 , tindríem <<78272 72788 59452 65648 47894 94528 7550>>."
-                    }        
+                    }
+                    VideoInformacion{
+                        source: "qrc:/videos/videoNihilista.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
+                    }
                 }
             }
         }

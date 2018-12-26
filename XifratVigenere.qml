@@ -89,6 +89,17 @@ PageClassica {
                         fillMode: Image.PreserveAspectFit
                         source: "qrc:/assets/tablaVigenere2.png"
                     }
+                    VideoInformacion{
+                        source: "qrc:/videos/videoVigenere.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
+                    }
 
                 }
             }

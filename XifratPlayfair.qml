@@ -144,10 +144,22 @@ A continuació, agafem el primer parell de lletres &lt;&lt;AT&gt;&gt;. Si ens fi
                         source: "qrc:/assets/tablaPlayfair6.png"
                     }
 
+                    TextoInformacion{
+                        text: "A continuació, tenim un video que no es propi, pero visualitza molt bé el xifrat PlayFair, link al original: <a href='https://www.youtube.com/watch?v=Bfsj4AZhmCM&t'>https://www.youtube.com/watch?v=Bfsj4AZhmCM&t</a> https://www.youtube.com/watch?v=Bfsj4AZhmCM&t"
+                        onLinkActivated: Qt.openUrlExternally("https://www.youtube.com/watch?v=Bfsj4AZhmCM&t")
+                    }
 
-
-
-
+                    VideoInformacion{
+                        source: "qrc:/videos/videoPlayfair.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
+                    }
                 }
 
             }

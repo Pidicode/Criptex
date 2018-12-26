@@ -110,6 +110,18 @@ PageClassica {
                     TextoInformacion{
                         text: "Obtenint com a frase xifrada <<IJTSFFSQNLDCRAAH>>"
                     }
+
+                    VideoInformacion{
+                        source: "qrc:/videos/videoDelastelle.mp4"
+                        onVideoBoolChanged: {
+                            if(!videoBool){
+                                pInformacion.Layout.minimumHeight = window.height/2
+                            }
+                            else{
+                                pInformacion.Layout.minimumHeight = window.height/3.5
+                            }
+                        }
+                    }
                 }
             }
         }

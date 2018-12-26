@@ -1,5 +1,15 @@
 <RCC>
     <qresource prefix="/">
-        <file>videos/Tauler Polibi.mp4</file>
+        <file>videos/videoADFGVX.mp4</file>
+        <file>videos/videoCesar.mp4</file>
+        <file>videos/videoDelastelle.mp4</file>
+        <file>videos/videoNihilista.mp4</file>
+        <file>videos/videoPolibi.mp4</file>
+        <file>videos/videoRailFence.mp4</file>
+        <file>videos/videoTritemi.mp4</file>
+        <file>videos/videoVigenere.mp4</file>
+        <file>videos/videoDES.mp4</file>
+        <file>videos/videoPlayfair.mp4</file>
+        <file>videos/videoRC4.mp4</file>
     </qresource>
 </RCC>

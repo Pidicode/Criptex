@@ -3,7 +3,7 @@ import QtQuick.Window 2.3
 import QtAV 1.6
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
-
+import "qrc:/"
 
 Video{
     property bool videoBool: true
@@ -11,8 +11,6 @@ Video{
     Layout.fillHeight: true
     Layout.fillWidth: true
     Layout.preferredHeight: 325
-    volume: 1
-
     source: "qrc:/videos/Tauler Polibi.mp4"
 
     Image{
@@ -23,7 +21,6 @@ Video{
         fillMode: Image.PreserveAspectFit
         source: "qrc:/assets/play.png"
         anchors.centerIn: parent
-
 
         states: [
             State {
@@ -149,15 +146,66 @@ Video{
             }
         }
 
-        Slider{
-            id: slider
-            width: root.width
+        RowLayout{
+            spacing: 0
             anchors.bottom: parent.bottom
-            from: 0
-            to: root.duration
-            value: root.position
-            onMoved: {
-                root.seek(slider.value)
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter
+            Layout.preferredWidth: root.width-10
+            Slider{
+                id: sliderTiempo
+                anchors.bottom: parent.bottom
+                Layout.fillWidth: true
+                Layout.preferredWidth: root.width-layoutSliderVolumen.width-10
+                from: 0
+                to: root.duration
+                value: root.position
+                onMoved: {
+                    root.seek(sliderTiempo.value)
+                }
+            }
+
+            RowLayout{
+                spacing: 0
+                id: layoutSliderVolumen
+                Layout.preferredWidth: root.width/6.75
+                Image{
+                    source:"qrc:/assets/simboloAudio.png"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    fillMode: Image.PreserveAspectFit
+                    Layout.maximumHeight: 25
+                    Layout.maximumWidth: 20
+                }
+
+                Slider{
+                    id: sliderVolumen
+                    anchors.bottom: parent.bottom
+                    Layout.fillWidth: true
+                    from: 0
+                    to: 1
+                    value: root.volume
+                    onMoved: {
+                        root.volume = sliderVolumen.value
+                    }
+                }
+                Image{
+                    source:"qrc:/assets/simboloExpandir.png"
+                    Layout.fillWidth: true
+                    fillMode: Image.PreserveAspectFit
+                    Layout.maximumHeight: 25
+                    Layout.maximumWidth: 20
+
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            var component = Qt.createComponent("VideoVentana.qml")
+                            var window    = component.createObject(root);
+                            window.show()
+                            root.pause()
+                        }
+                    }
+                }
             }
         }
         onDoubleClicked: {
@@ -167,6 +215,7 @@ Video{
         }
     }
 }
+
 
 
 
