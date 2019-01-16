@@ -64,11 +64,6 @@ Page {
             text: "El codi calendari"
             onListItemClick: seleccionarCifrado("SistemesDeXifrat/CodiCalendari.qml")
         }
-
-        ListItem{
-            text: "Mètode de sustitució numèrica"
-            onListItemClick: seleccionarCifrado("SistemesDeXifrat/MSustitucioNumerica.qml")
-        }
     }
 
     VisualItemModel{

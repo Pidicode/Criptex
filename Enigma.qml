@@ -18,7 +18,7 @@ PageClassica {
 
     ColumnCifrados{
         id: columnaCifrados
-        tCifrado.text: (tNoCifrado.text === "" || tPalabraClave1.text === "") ? "" : (comprobacionCifrado) ? xifrats.cifradoEnigma(tNoCifrado.text, tPalabraClave1.text, plugboard.text, cbPos1.currentIndex, cbPos2.currentIndex, cbPos3.currentIndex) : xifrats.descifradoADFGVX(tNoCifrado.text, tPalabraClave1.text, plugboard.text, cbPos1.currentIndex, cbPos2.currentIndex, cbPos3.currentIndex)
+        tCifrado.text: (tNoCifrado.text === "" || tPalabraClave1.text === "") ? "" : (comprobacionCifrado) ? xifrats.cifradoEnigma(tNoCifrado.text, tPalabraClave1.text, plugboard.text, cbPos1.currentIndex, cbPos2.currentIndex, cbPos3.currentIndex) : xifrats.cifradoEnigma(tNoCifrado.text, tPalabraClave1.text, plugboard.text, cbPos1.currentIndex, cbPos2.currentIndex, cbPos3.currentIndex)
         tTitulo.text: "Xifrat Enigma"
         tDescripccion.text: "La Enigma, màquina portable que permetia xifrar missatges a partir de rotors, va ser un dels mecanismes de xifrat més importants durant la 2ª Guerra Mundial. Va ser patentada l’any 1918 per l’enginyer Arthur Scherbius, posada a la venta a nivell comercial al 1923 i adoptada posteriorment el 1926 per l’exercit alemany. Per conèixer més sobre el funcionament i els requisits fes click <a href='http://www.kde.org'>aquí</a>"
 
